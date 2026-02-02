@@ -1,0 +1,233 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.backgroundGradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent);
+    pointer-events: none;
+}
+
+.gridPattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    color: var(--color-primary-light);
+    width: fit-content;
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-available);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-text-primary);
+}
+
+.titleGradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 540px;
+    line-height: 1.7;
+}
+
+.ctaGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.primaryButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.secondaryButton {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 16px 32px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondaryButton:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-text-muted);
+}
+
+.trustBadges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.trustItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.trustItem svg {
+    color: var(--color-primary);
+}
+
+/* Visual Section */
+.visual {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+@media (min-width: 1024px) {
+    .visual {
+        display: flex;
+    }
+}
+
+.laptopWrapper {
+    position: relative;
+}
+
+.floatingLaptop {
+    position: relative;
+    z-index: 1;
+}
+
+.laptopSvg {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
+}
+
+.laptopGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+}
+
+.floatingTag {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border);
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.tagStatus {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.tagStatus.available {
+    background: var(--color-available);
+    box-shadow: 0 0 10px var(--color-available);
+}

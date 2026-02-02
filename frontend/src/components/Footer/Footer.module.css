@@ -1,0 +1,161 @@
+.footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: 80px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+}
+
+.brandColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logoText {
+    color: var(--color-text-primary);
+}
+
+.logoAccent {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-surface-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+}
+
+.socialLink:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.linksColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.columnTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+}
+
+.link {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: var(--color-primary);
+}
+
+.contactColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.contactItem:hover {
+    color: var(--color-text-secondary);
+}
+
+.contactItem svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.bottomBar {
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0;
+}
+
+.bottomContent {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .bottomContent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.copyright {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.bottomLinks {
+    display: flex;
+    gap: 24px;
+}
+
+.bottomLinks a {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.bottomLinks a:hover {
+    color: var(--color-text-secondary);
+}

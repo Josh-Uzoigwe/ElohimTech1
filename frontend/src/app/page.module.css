@@ -1,0 +1,259 @@
+.main {
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Featured Section */
+.featuredSection {
+    padding: 100px 0;
+    position: relative;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sectionBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    color: var(--color-primary-light);
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+}
+
+.gradientText {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sectionDescription {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 640px) {
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .productGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.loadingGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 640px) {
+    .loadingGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .loadingGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.skeletonCard {
+    aspect-ratio: 4/5;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(90deg,
+            var(--color-surface) 25%,
+            var(--color-surface-elevated) 50%,
+            var(--color-surface) 75%);
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.emptyState {
+    text-align: center;
+    padding: 60px;
+    color: var(--color-text-muted);
+}
+
+.viewAllWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.viewAllButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 16px 32px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.viewAllButton:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* How It Works Section */
+.howItWorksSection {
+    padding: 100px 0;
+    background: var(--color-surface);
+}
+
+.stepsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .stepsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stepCard {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+}
+
+.stepNumber {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+}
+
+.stepTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 12px;
+}
+
+.stepDesc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+    padding: 100px 0;
+}
+
+.ctaCard {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 60%);
+}
+
+.ctaTitle {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.ctaDescription {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    position: relative;
+}
+
+.ctaEmail {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.ctaEmail a {
+    color: white;
+    text-decoration: underline;
+}
+
+.ctaCard button {
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+}

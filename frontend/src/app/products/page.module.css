@@ -1,0 +1,278 @@
+.main {
+    min-height: 100vh;
+    background: var(--color-background);
+    padding-top: 100px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+}
+
+.pageHeader {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.pageTitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 12px;
+}
+
+.gradientText {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pageDescription {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+/* Filter Bar */
+.filterBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.resultCount {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.filterActions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.quickFilters {
+    display: none;
+    gap: 8px;
+}
+
+@media (min-width: 768px) {
+    .quickFilters {
+        display: flex;
+    }
+}
+
+.quickFilter {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quickFilter:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-primary);
+}
+
+.quickFilter.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.filterButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+    border-color: var(--color-primary);
+}
+
+.filterBadge {
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 100px;
+}
+
+/* Filter Panel */
+.filterPanel {
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.filterGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+    .filterGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filterLabel {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filterSelect,
+.filterInput {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+    border-color: var(--color-primary);
+}
+
+.filterButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    background: var(--color-surface);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border: 1px solid var(--color-border);
+    border-top: none;
+    margin-top: -1px;
+}
+
+.clearButton {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-primary);
+}
+
+.applyButton {
+    background: var(--gradient-primary);
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Product Grid */
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 640px) {
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .productGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.loadingGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 640px) {
+    .loadingGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .loadingGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.skeletonCard {
+    aspect-ratio: 4/5;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(90deg,
+            var(--color-surface) 25%,
+            var(--color-surface-elevated) 50%,
+            var(--color-surface) 75%);
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.emptyState {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
