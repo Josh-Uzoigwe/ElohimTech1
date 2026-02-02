@@ -32,8 +32,8 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1850000,
                 description: 'Apple M3 chip, 14-inch Liquid Retina XDR display, 18GB unified memory, 512GB SSD storage. Space Black finish.',
-                images: ['/products/macbook-pro-14.jpg'],
-                specs: {
+                media: { images: ['/products/macbook-pro-14.png'] },
+                specifications: {
                     processor: 'Apple M3 Pro',
                     ram: '18GB Unified Memory',
                     storage: '512GB SSD',
@@ -48,8 +48,8 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1450000,
                 description: 'Intel Core i7-13700H, 15.6" OLED 3.5K display, 16GB RAM, 512GB SSD. Premium ultrabook design.',
-                images: ['/products/dell-xps-15.jpg'],
-                specs: {
+                media: { images: ['/products/dell-xps-15.png'] },
+                specifications: {
                     processor: 'Intel Core i7-13700H',
                     ram: '16GB DDR5',
                     storage: '512GB NVMe SSD',
@@ -64,8 +64,8 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1250000,
                 description: '2-in-1 convertible laptop with Intel Core i7, 16GB RAM, 1TB SSD, and stunning OLED touchscreen display.',
-                images: ['/products/hp-spectre-x360.jpg'],
-                specs: {
+                media: { images: ['/products/hp-spectre-x360.png'] },
+                specifications: {
                     processor: 'Intel Core i7-1360P',
                     ram: '16GB DDR5',
                     storage: '1TB SSD',
@@ -80,13 +80,13 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1650000,
                 description: 'Gaming powerhouse with Intel Core i9, RTX 4070, 16GB RAM, and 240Hz display for ultimate gaming experience.',
-                images: ['/products/asus-rog-strix-g16.jpg'],
-                specs: {
+                media: { images: ['/products/asus-rog-strix-g16.png'] },
+                specifications: {
                     processor: 'Intel Core i9-13980HX',
                     ram: '16GB DDR5',
                     storage: '1TB SSD',
                     display: '16" QHD 240Hz',
-                    graphics: 'NVIDIA RTX 4070'
+                    gpu: 'NVIDIA RTX 4070'
                 },
                 featured: true,
             },
@@ -96,8 +96,8 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1550000,
                 description: 'Business ultrabook with Intel Core i7, 32GB RAM, 1TB SSD. Legendary ThinkPad reliability and keyboard.',
-                images: ['/products/lenovo-thinkpad-x1.jpg'],
-                specs: {
+                media: { images: ['/products/lenovo-thinkpad-x1.png'] },
+                specifications: {
                     processor: 'Intel Core i7-1365U',
                     ram: '32GB LPDDR5',
                     storage: '1TB SSD',
@@ -112,8 +112,8 @@ const seedData = async () => {
                 category: 'Laptop',
                 price: 1350000,
                 description: 'Incredibly thin and light with M2 chip, 15.3-inch Liquid Retina display, all-day battery life.',
-                images: ['/products/macbook-air-15.jpg'],
-                specs: {
+                media: { images: ['/products/macbook-air-15.png'] },
+                specifications: {
                     processor: 'Apple M2',
                     ram: '8GB Unified Memory',
                     storage: '256GB SSD',
@@ -128,11 +128,11 @@ const seedData = async () => {
                 category: 'Accessory',
                 price: 85000,
                 description: 'Premium wireless mouse with MagSpeed scrolling, 8K DPI sensor, and quiet clicks. Perfect for productivity.',
-                images: ['/products/gaming-mouse.jpg'],
-                specs: {
-                    connectivity: 'Bluetooth + USB Receiver',
+                media: { images: ['/products/gaming-mouse.png'] },
+                specifications: {
+                    // Mapping to available schema fields as best as possible
                     battery: '70 days on full charge',
-                    dpi: '8000 DPI'
+                    ports: 'USB Receiver' // Using ports for connectivity
                 },
                 featured: false,
             },
@@ -142,11 +142,9 @@ const seedData = async () => {
                 category: 'Accessory',
                 price: 45000,
                 description: 'Expand your laptop connectivity with HDMI 4K, USB-A, USB-C, SD card reader, and 100W Power Delivery.',
-                images: ['/products/usb-c-hub.jpg'],
-                specs: {
-                    ports: '7 ports total',
-                    powerDelivery: '100W pass-through',
-                    hdmi: '4K@60Hz output'
+                media: { images: ['/products/usb-c-hub.png'] },
+                specifications: {
+                    ports: '7 ports total, HDMI 4K, USB-A/C',
                 },
                 featured: false,
             },
