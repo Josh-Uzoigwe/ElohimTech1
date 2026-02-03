@@ -150,27 +150,35 @@ export default function ProductDetailsPage() {
                             transition={{ duration: 0.5 }}
                         >
                             <div className={styles.mainImage}>
-                                <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="50" y="20" width="300" height="180" rx="8" fill="#1a1a24" stroke="url(#screenGradient2)" strokeWidth="2" />
-                                    <rect x="60" y="30" width="280" height="160" rx="4" fill="#0a0a0f" />
-                                    <rect x="75" y="50" width="100" height="12" rx="2" fill="#6366f1" opacity="0.6" />
-                                    <rect x="75" y="70" width="180" height="8" rx="2" fill="#2a2a3d" />
-                                    <rect x="75" y="85" width="150" height="8" rx="2" fill="#2a2a3d" />
-                                    <rect x="75" y="100" width="200" height="8" rx="2" fill="#2a2a3d" />
-                                    <rect x="75" y="130" width="80" height="30" rx="4" fill="url(#buttonGradient2)" />
-                                    <path d="M30 200 L50 200 Q50 210 60 210 L340 210 Q350 210 350 200 L370 200 L380 220 Q380 230 370 230 L30 230 Q20 230 20 220 Z" fill="#1a1a24" stroke="#2a2a3d" strokeWidth="1" />
-                                    <rect x="100" y="213" width="200" height="4" rx="2" fill="#2a2a3d" />
-                                    <defs>
-                                        <linearGradient id="screenGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="#6366f1" />
-                                            <stop offset="100%" stopColor="#8b5cf6" />
-                                        </linearGradient>
-                                        <linearGradient id="buttonGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stopColor="#6366f1" />
-                                            <stop offset="100%" stopColor="#a855f7" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
+                                {product.media?.images && product.media.images.length > 0 ? (
+                                    <img
+                                        src={product.media.images[0]}
+                                        alt={product.name}
+                                        className={styles.productImage}
+                                    />
+                                ) : (
+                                    <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="50" y="20" width="300" height="180" rx="8" fill="#1a1a24" stroke="url(#screenGradient2)" strokeWidth="2" />
+                                        <rect x="60" y="30" width="280" height="160" rx="4" fill="#0a0a0f" />
+                                        <rect x="75" y="50" width="100" height="12" rx="2" fill="#6366f1" opacity="0.6" />
+                                        <rect x="75" y="70" width="180" height="8" rx="2" fill="#2a2a3d" />
+                                        <rect x="75" y="85" width="150" height="8" rx="2" fill="#2a2a3d" />
+                                        <rect x="75" y="100" width="200" height="8" rx="2" fill="#2a2a3d" />
+                                        <rect x="75" y="130" width="80" height="30" rx="4" fill="url(#buttonGradient2)" />
+                                        <path d="M30 200 L50 200 Q50 210 60 210 L340 210 Q350 210 350 200 L370 200 L380 220 Q380 230 370 230 L30 230 Q20 230 20 220 Z" fill="#1a1a24" stroke="#2a2a3d" strokeWidth="1" />
+                                        <rect x="100" y="213" width="200" height="4" rx="2" fill="#2a2a3d" />
+                                        <defs>
+                                            <linearGradient id="screenGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stopColor="#6366f1" />
+                                                <stop offset="100%" stopColor="#8b5cf6" />
+                                            </linearGradient>
+                                            <linearGradient id="buttonGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stopColor="#6366f1" />
+                                                <stop offset="100%" stopColor="#a855f7" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                )}
                             </div>
                             <div className={styles.brandBadge}>{product.brand}</div>
                         </motion.div>
