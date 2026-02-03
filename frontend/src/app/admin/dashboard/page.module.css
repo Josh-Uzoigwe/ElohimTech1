@@ -565,6 +565,23 @@
     border-color: #f87171;
 }
 
+.actionButton.remove {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #fbbf24;
+    padding: 8px 14px;
+}
+
+.actionButton.remove:hover {
+    background: rgba(245, 158, 11, 0.3);
+    border-color: #fbbf24;
+}
+
+.actionButton.remove:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 .deleteButton {
     background: linear-gradient(135deg, #ef4444, #dc2626);
     border: none;

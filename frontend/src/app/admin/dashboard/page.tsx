@@ -10,6 +10,7 @@ import {
     Receipt,
     LogOut,
     Plus,
+    Minus,
     Check,
     X,
     RefreshCw,
@@ -198,6 +199,25 @@ export default function AdminDashboard() {
             fetchData();
         } catch (error) {
             console.error('Failed to generate tag:', error);
+        }
+    };
+
+    const removeTag = async (productId: string) => {
+        try {
+            // Find available units for this product
+            const productUnits = units.filter(
+                u => u.productId?._id === productId && u.status === 'available'
+            );
+            if (productUnits.length === 0) {
+                alert('No available units to remove for this product');
+                return;
+            }
+            // Delete the last available unit
+            const lastUnit = productUnits[productUnits.length - 1];
+            await unitsApi.delete(lastUnit.uniqueTag);
+            fetchData();
+        } catch (error) {
+            console.error('Failed to remove tag:', error);
         }
     };
 
@@ -473,6 +493,15 @@ export default function AdminDashboard() {
                                                         >
                                                             <Plus size={16} />
                                                             Add Tag
+                                                        </button>
+                                                        <button
+                                                            className={`${styles.actionButton} ${styles.remove}`}
+                                                            onClick={() => removeTag(product._id)}
+                                                            title="Remove available tag"
+                                                            disabled={!product.unitCounts?.available}
+                                                        >
+                                                            <Minus size={16} />
+                                                            Remove Tag
                                                         </button>
                                                         <button
                                                             className={`${styles.actionButton} ${styles.edit}`}
