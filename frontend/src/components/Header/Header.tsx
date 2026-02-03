@@ -71,15 +71,7 @@ export default function Header() {
 
                     <ThemeToggle />
 
-                    <Link href="/admin">
-                        <motion.button
-                            className={styles.adminButton}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Admin
-                        </motion.button>
-                    </Link>
+
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -118,14 +110,7 @@ export default function Header() {
                                     </Link>
                                 </motion.div>
                             ))}
-                            <Link href="/admin">
-                                <motion.button
-                                    className={styles.mobileAdminButton}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    Admin Dashboard
-                                </motion.button>
-                            </Link>
+
                         </motion.div>
                     )}
                 </AnimatePresence>

@@ -31,7 +31,7 @@ export default function Footer() {
                     <Link href="/products" className={styles.link}>All Products</Link>
                     <Link href="/products?category=Laptop" className={styles.link}>Laptops</Link>
                     <Link href="/products?category=Accessory" className={styles.link}>Accessories</Link>
-                    <Link href="/admin" className={styles.link}>Admin Portal</Link>
+
                 </div>
 
                 {/* Support */}
