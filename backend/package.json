@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "esbuild src/server.ts --bundle --platform=node --outfile=dist/server.js --packages=external",
+    "build": "npx esbuild src/server.ts --bundle --platform=node --outfile=dist/server.js --packages=external",
     "start": "node dist/server.js",
     "seed": "ts-node-dev src/seed.ts"
   },
